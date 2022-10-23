@@ -47,17 +47,21 @@ def my_profile(text):
 def push_row_initial(row_type):
     columns = get_row_id_columns(row_type)
     get_user()["initial"].push({ "id": row_type, "columns": columns})
+    return ""
 
 @api.post('/initial/remove/<int:index>')
 def remove_row_initial(index):
-    update_user(
-        get_user()["initial"].pop(index))
+    user = get_user()
+    user["initial"].pop(index)
+    update_user(user)
+    return ""
 
 @api.post('/initial/update/<int:index>/<key>/<value>')
 def update_row_initial(index, key, value):
     user = get_user()
     user["initial"][index]["columns"][key]["value"] = value
     update_user(user)
+    return ""
 
 @api.get('/initial/rows')
 def get_rows_initial():
@@ -68,19 +72,24 @@ def get_rows_initial():
 @api.post('/tracker/insert/<date>/<row_type>')
 def push_row(date, row_type):
     columns = get_row_id_columns(row_type)
-    update_user(
-        get_user()["tracker"][date].push({ "id": row_type, "columns": columns}))
+    user = get_user()
+    user["tracker"][date].push({ "id": row_type, "columns": columns})
+    update_user(user)
+    return ""
 
 @api.post('/tracker/remove/<date>/<int:index>')
 def remove_row(date, index):
-    update_user(
-        get_user()["tracker"][date].pop(index))
+    user = get_user()
+    user["tracker"][date].pop(index)
+    update_user(user)
+    return ""
 
 @api.post('/tracker/update/<date>/<int:index>/<key>/<value>')
 def update_row(date, index, key, value):
     user = get_user()
     user["tracker"][date][index]["columns"][key]["value"] = value
     update_user(user)
+    return ""
 
 @api.get('/tracker/rows/<date>')
 def get_rows(date):
@@ -104,6 +113,7 @@ def set_goal_yearly(value):
     user = get_user()
     user["goals"]["year"] = value
     update_user(user)
+    return ""
     
 @api.get('/user/goals/month')
 def get_goal_month():
@@ -124,6 +134,7 @@ def set_goal_day(value):
     user = get_user()
     user["goals"]["day"] = value
     update_user(user)
+    return ""
 
 # Calculate Current
 

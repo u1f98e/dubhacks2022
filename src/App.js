@@ -26,8 +26,9 @@ export default function App() {
         <Typography variant="h4" component="h1" gutterBottom>
         <h1>footprintMinder</h1>
         </Typography>
+
         <TabsWrappedLabel />
-        <SimpleContainer />
+ 
         <Footer />
         <CarbonTable path="/tracker/rows/" date={today()} />
         </Box>

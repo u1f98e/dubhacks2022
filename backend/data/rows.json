@@ -1,0 +1,32 @@
+{
+	"commute-car": { 
+		"formula": "miles * mpg",
+		"columns": {
+			"miles": { "label": "Miles", "type": "input" },
+			"mpg":   { "label": "MPG", "type": "input" }
+		}
+	},
+	
+	"commute-diesel": { 
+		"formula": "miles * mpg",
+		"columns": {
+			"miles": { "label": "Miles", "type": "input" },
+			"mpg":   { "label": "MPG", "type": "input" }
+		}
+	},
+
+	"commute-bus": { 
+		"formula": "miles * mpg",
+		"columns": {
+			"miles": { "label": "Miles", "type": "input" },
+			"mpg":   { "label": "MPG", "type": "input" }
+		}
+	},
+
+	"commute-train": { 
+		"formula": "miles * mpg",
+		"columns": {
+			"miles": { "label": "Miles", "type": "input" }
+		}
+	}
+}

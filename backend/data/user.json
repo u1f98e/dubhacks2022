@@ -1,0 +1,9 @@
+{
+	"dates": {
+		"2022-01-01": [
+			{ "id": "commute-car", "columns": {
+				"miles": { "label": "Miles", "type": "input", "value": "30"}
+			}}
+		]
+	}
+}

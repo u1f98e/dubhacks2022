@@ -46,20 +46,15 @@ def get_rows_initial(date):
 
 @api.post('/tracker/insert/<date>/<int:index>/<row_type>')
 def insert_row(date, index, row_type):
-    response = {
-        
-    }
-    return response
 
 @api.post('/tracker/remove/<date>/<int:index>')
 def remove_row(index):
-    response = {
-        
-    }
-    return response
 
 @api.post('/tracker/update/<date>/<int:index>/<key>/<value>')
 def update_row(date, index, key, value):
+
+@api.get('/tracker/rows/<date>')
+def get_rows(date):
     response = {
         
     }

@@ -19,6 +19,7 @@ function addRow(id, path, date, callback) {
 	})
 	.then((resp) => {
 		callback()
+		window.location.reload(false)
 	}).catch((error) => {
 	  if (error.response) {
 			console.log(error.response)

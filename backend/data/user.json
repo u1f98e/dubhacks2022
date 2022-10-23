@@ -15,28 +15,6 @@
     "tracker": {
         "2022-10-23": [
             {
-                "id": "commute-bus",
-                "label": "Bus Commute",
-                "columns": {
-                    "miles": {
-                        "label": "Miles",
-                        "type": "input",
-                        "value": "30"
-                    }
-                }
-            },
-            {
-                "id": "diet-pork",
-                "label": "Pork Eaten",
-                "columns": {
-                    "kg": {
-                        "label": "Kg",
-                        "type": "input",
-                        "value": "29"
-                    }
-                }
-            },
-            {
                 "id": "diet-beef",
                 "label": "Beef Eaten",
                 "columns": {
@@ -52,6 +30,16 @@
                 "columns": {
                     "kwh": {
                         "label": "KWh",
+                        "type": "input"
+                    }
+                }
+            },
+            {
+                "id": "commute-train",
+                "label": "Train Commute",
+                "columns": {
+                    "miles": {
+                        "label": "Miles",
                         "type": "input"
                     }
                 }

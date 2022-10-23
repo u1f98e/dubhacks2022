@@ -27,4 +27,8 @@ export default function App() {
       </Box>
     </Container>
   );
+  //Tabs
+  const navigateToday = () => {
+    navigate('/today', {replace: true});
+  };
 }

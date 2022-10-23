@@ -1,6 +1,6 @@
 {
 	"commute-car": { 
-		"formula": "miles * mpg",
+		"formula": "miles / mpg * 8.887",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" },
 			"mpg":   { "label": "MPG", "type": "input" }
@@ -8,7 +8,7 @@
 	},
 	
 	"commute-diesel": { 
-		"formula": "miles * mpg",
+		"formula": "miles / mpg * 10.180",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" },
 			"mpg":   { "label": "MPG", "type": "input" }
@@ -16,17 +16,72 @@
 	},
 
 	"commute-bus": { 
-		"formula": "miles * mpg",
+		"formula": "miles * 0.090718474",
 		"columns": {
-			"miles": { "label": "Miles", "type": "input" },
-			"mpg":   { "label": "MPG", "type": "input" }
+			"miles": { "label": "Miles", "type": "input" }
 		}
 	},
 
 	"commute-train": { 
+		"formula": "miles * 0.177",
+		"columns": {
+			"miles": { "label": "Miles", "type": "input" }
+		}
+	},
+
+	"travel-plane": { 
+		"formula": "miles * 24.176473321",
+		"columns": {
+			"miles": { "label": "Miles", "type": "input" }
+		}
+	},
+
+	"travel-boat": { 
 		"formula": "miles * mpg",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" }
+		}
+	},
+
+	"diet-chicken": { 
+		"formula": "kg * 6",
+		"columns": {
+			"kg": { "label": "Kilograms", "type": "input" }
+		}
+	},
+
+	"diet-pork": { 
+		"formula": "kg * 7",
+		"columns": {
+			"kg": { "label": "Kilograms", "type": "input" }
+		}
+	},
+
+	"diet-beef": { 
+		"formula": "kg * 60",
+		"columns": {
+			"kg": { "label": "Kilograms", "type": "input" }
+		}
+	},
+
+	"energy-gas": { 
+		"formula": "kwh * 0.412769057",
+		"columns": {
+			"kwh": { "label": "KWh", "type": "input" }
+		}
+	},
+
+	"energy-coal": { 
+		"formula": "kwh * 1.011510985",
+		"columns": {
+			"kwh": { "label": "KWh", "type": "input" }
+		}
+	},
+
+	"energy-petrol": { 
+		"formula": "kwh * 0.966151748",
+		"columns": {
+			"kwh": { "label": "KWh", "type": "input" }
 		}
 	}
 }

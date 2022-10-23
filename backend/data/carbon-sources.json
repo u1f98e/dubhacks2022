@@ -1,10 +1,13 @@
 [
 	{ "name": "Commute", "children": [
 		{ "id": "commute-car", "name": "Car", "description": "" },
-		{ "id": "commute-diesel", "name": "Truck (Diesel)", "description": "" }
+		{ "id": "commute-diesel", "name": "Truck (Diesel)", "description": "" },
+		{ "id": "commute-bus", "name": "Bus", "description": "" },
+		{ "id": "commute-train", "name": "Train", "description": "" }
 	]},
 	{ "name": "Travel", "children": [
-		{ "id": "travel-plane", "name": "Airplane", "description": "" }
+		{ "id": "travel-plane", "name": "Airplane", "description": "" },
+		{ "id": "travel-boat", "name": "Boat", "description": "" }
 	]},
 	{ "name": "Diet", "children": [
 		{ "id": "diet-chicken", "name": "Chicken", "description": "" },
@@ -12,6 +15,8 @@
 		{ "id": "diet-beef", "name": "Beef", "description": "" }
 	]},
 	{ "name": "Energy", "children": [
-		{ "id": "energy-gas", "name": "Natural Gas", "description": "" }
+		{ "id": "energy-gas", "name": "Natural Gas", "description": "" },
+		{ "id": "energy-coal", "name": "Coal", "description": "" },
+		{ "id": "energy-petrol", "name": "Petroleum", "description": "" }
 	]}
 ]

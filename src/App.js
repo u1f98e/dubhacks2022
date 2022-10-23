@@ -25,8 +25,7 @@ export default function App() {
         <Typography variant="h4" component="h1" gutterBottom>
           FootprintMinder      
         </Typography>
-        <ProTip />
-        <Tabs />
+       
         <TabsWrappedLabel />
         <Footer />
         {/*<CarbonTable /> */}

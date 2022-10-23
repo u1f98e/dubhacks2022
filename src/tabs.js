@@ -21,7 +21,11 @@ export default function Tabs() {
 
 
   return (
+        <div>
         <Button variant="contained" onClick={navigateToday}>Today</Button>
+        <Button variant="contained" onClick={navigateToday}>Today</Button>
+        </div>
   );
+  
 }
 

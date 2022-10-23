@@ -1,32 +1,30 @@
+
+/*Buttons for the:
+-About Us Page
+-Carbon Quiz 
+*/
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-export default function Tabs() {
+export default function Buttons() {
   const navigate = useNavigate();
 
-  const navigateToday = () => {
-    // 👇️ navigate to today botton
-    navigate('/today');
+  const navigateAbout = () => {
+    //navigate to About us button
+    navigate('/about');
   };
 
-  const navigateMonthly = () => {
-    // 👇️ navigate to monthly botton
-    navigate('/monthly');
+  const navigateQuiz = () => {
+    //navigate to quiz botton
+    navigate('/quiz');
   };
-
-  const navigateYearly = () => {
-    // 👇️ navigate to yearly botton
-    navigate('/yearly');
-  };
-
 
   return (
         <div>
 
             <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button>Today</Button>
-              <Button>Monthly</Button>
-              <Button>Yearly</Button>
+            <Button>Carbon Assesment</Button>
+              <Button>About</Button>
             </ButtonGroup>
   
         </div>

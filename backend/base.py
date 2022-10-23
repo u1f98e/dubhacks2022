@@ -96,6 +96,9 @@ def set_goal_day(value):
 
 # Calculate Current
 
+def do_calculation():
+    return ""
+
 @api.get('/user/current/year')
 def get_current_yearly():
     return user["goals"]["year"]["current"]

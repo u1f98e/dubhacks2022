@@ -30,7 +30,7 @@ export default function App() {
         <TabsWrappedLabel />
  
         <Footer />
-        <CarbonTable path="/tracker/rows/" date={today()} />
+        <CarbonTable path="/tracker" date={today()} />
         </Box>
         </Container>
   );

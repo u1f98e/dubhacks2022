@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ProTip from './ProTip';
 import TabsWrappedLabel from './panels';
-
+import CarbonTable from './table'
+import {today} from './config'
 
 function Footer() {
   return (
@@ -27,7 +28,7 @@ export default function App() {
        
         <TabsWrappedLabel />
         <Footer />
-        {/*<CarbonTable /> */}
+        <CarbonTable path="/tracker/rows/" date={today()} />
         </Box>
         </Container>
   );

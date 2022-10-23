@@ -3,5 +3,5 @@ import Button from '@mui/material/Button';
 
 
 export default function ProTip() {
-  return <Button variant="contained">Hello World</Button>;
+  return <Button variant="outlined">Hello World</Button>;
 }

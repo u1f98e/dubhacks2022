@@ -3,10 +3,10 @@ import axios from "axios";
 import TextField from '@mui/material/TextField';
 
 
-function getData() {
+function getData(e) {
     axios({
-      method: "GET",
-      url:"/profile",
+      method: "POST",
+      url:"/test/" + e.target.value,
     })
     .then((response) => {
       const res =response.data

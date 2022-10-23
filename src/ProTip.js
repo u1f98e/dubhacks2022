@@ -2,11 +2,12 @@ import * as React from 'react';
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 
+const url = "http://localhost:5000"
 
 function getData(e) {
     axios({
       method: "POST",
-      url:"/test/" + e.target.value,
+      url: url + "/test/" + e.target.value,
     })
     .then((response) => {
       const res =response.data

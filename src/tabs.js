@@ -1,5 +1,6 @@
 import {Routes, Route, useNavigate} from 'react-router-dom';
-
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 export default function Tabs() {
   const navigate = useNavigate();
 
@@ -20,47 +21,16 @@ export default function Tabs() {
 
 
   return (
-    <div>
-      <div>
-        <button onClick={navigateToday}>Today</button>
-        <hr />
-        <button onClick={navigateMonthly}>Current Monthly</button>
-        <hr/>
-        <button onClick={navigateYearly}>Current Year</button>
-      
-        <Routes>
-          <Route path="/today" element={<Today />} />
-          <Route path="/" element={<Monthly />} />
-          <Route path="/yearly" element={<Yearly />} />
-        </Routes>
-      </div>
-    </div>
+        <div>
+
+            <ButtonGroup variant="contained" aria-label="outlined primary button group">
+              <Button>Today</Button>
+              <Button>Monthly</Button>
+              <Button>Yearly</Button>
+            </ButtonGroup>
+  
+        </div>
   );
+  
 }
-
-function Today() {
-  return <h2>Today</h2>;
-}
-
-function Monthly() {
-  return <h2>Current Monthly</h2>;
-}
-
-function Yearly() {
-  return <h2>Current Year</h2>;
-}
-
-
-function Today() {
-  return <h2>Today</h2>;
-}
-
-function Monthly() {
-  return <h2>Current Monthly</h2>;
-}
-
-function Yearly() {
-  return <h2>Current Year</h2>;
-}
-
 

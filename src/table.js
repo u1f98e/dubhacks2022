@@ -12,6 +12,22 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
+function addRow(id, path, date, callback) {
+	return axios({
+	  method: "POST",
+	  url: url + "/tracker/insert/" + today() + "/" + id
+	})
+	.then((resp) => {
+		callback()
+	}).catch((error) => {
+	  if (error.response) {
+			console.log(error.response)
+			console.log(error.response.status)
+			console.log(error.response.headers)
+		}
+	})
+}
+
 function removeRow(index, path, date, callback) {
 	return axios({
 	  method: "POST",
@@ -70,7 +86,8 @@ export default function CarbonTable(props) {
 								</TableCell>
 							))}
 							<TableCell align="right" key="RemoveButton">
-								<Button variant="outlined" color="error" onClick={() => { return removeRow(rindex, props.path, props.date, forceUpdate) }}>Remove</Button>
+								{props.showRemove && <Button variant="outlined" color="error" onClick={() => { return removeRow(rindex, props.path, props.date, forceUpdate) }}>Remove</Button>}
+								{props.showAdd && <Button variant="outlined" onClick={() => { return addRow(row.id, props.path, props.date, forceUpdate) }}>Add</Button>}
 							</TableCell>
 						</TableRow>
 					))}

@@ -1,23 +1,66 @@
 {
-	"initial": [
-		{ "id": "commute-car", "label": "Car Commute", "columns": {
-			"miles": { "label": "Miles", "type": "input", "value": "30"}
-		}}
-	],
-
-	"tracker": {
-		"2022-10-23": [
-			{ "id": "commute-bus", "label": "Bus Commute", "columns": {
-				"miles": { "label": "Miles", "type": "input", "value": "30"}
-			}},
-			{ "id": "diet-pork", "label": "Pork Eaten", "columns": {
-				"kg": { "label": "Kg", "type": "input", "value": "29"}
-			}}
-		]
-	},
-	"goals": {
-		"year":   0,
-		"month":  0,
-		"day":    0
-	}
+    "initial": [
+        {
+            "id": "commute-car",
+            "label": "Car Commute",
+            "columns": {
+                "miles": {
+                    "label": "Miles",
+                    "type": "input",
+                    "value": "30"
+                }
+            }
+        }
+    ],
+    "tracker": {
+        "2022-10-23": [
+            {
+                "id": "commute-bus",
+                "label": "Bus Commute",
+                "columns": {
+                    "miles": {
+                        "label": "Miles",
+                        "type": "input",
+                        "value": "30"
+                    }
+                }
+            },
+            {
+                "id": "diet-pork",
+                "label": "Pork Eaten",
+                "columns": {
+                    "kg": {
+                        "label": "Kg",
+                        "type": "input",
+                        "value": "29"
+                    }
+                }
+            },
+            {
+                "id": "diet-beef",
+                "label": "Beef Eaten",
+                "columns": {
+                    "kg": {
+                        "label": "Kilograms",
+                        "type": "input"
+                    }
+                }
+            },
+            {
+                "id": "energy-gas",
+                "label": "Natural Gas Used",
+                "columns": {
+                    "kwh": {
+                        "label": "KWh",
+                        "type": "input"
+                    }
+                }
+            }
+        ]
+    },
+    "goals": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+    }
 }

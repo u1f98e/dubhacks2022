@@ -9,6 +9,7 @@ import TabsWrappedLabel from './panels';
 import CarbonTable from './table'
 import {today} from './config'
 import  SimpleContainer from './welcomeScreen'; 
+import SimpleDialogDemo from './ProTip';
 
 function Footer() {
   return (
@@ -29,7 +30,8 @@ export default function App() {
         <TabsWrappedLabel />
         <SimpleContainer />
         <Footer />
-        <CarbonTable path="/tracker" date={today()} />
+        <SimpleDialogDemo />
+        <CarbonTable path="/tracker" date={today()} showRemove="true" />
         </Box>
         </Container>
   );

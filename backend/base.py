@@ -7,7 +7,7 @@ from flask_cors import CORS
 api = Flask(__name__)
 cors = CORS(api)
 
-rows = open("data/rows.json", "r")
+rows = json.load(open("data/rows.json", "r"))
 
 def get_user():
     user_file = open("data/user.json", "r")
@@ -23,10 +23,13 @@ def update_user(user):
 
 def get_list_definition(list_id):
     with open(f"data/{list_id}.json") as read_file:
-        return json.load(read_file)
+        return { "rows": json.load(read_file) }
     
 def get_row_id_columns(row_id):
     return rows[row_id]["columns"]
+
+def get_row_id_label(row_id):
+    return rows[row_id]["label"]
 
 def get_row_id_formula(row_id):
     return rows[row_id]["formula"]
@@ -72,8 +75,9 @@ def get_rows_initial():
 @api.post('/tracker/insert/<date>/<row_type>')
 def push_row(date, row_type):
     columns = get_row_id_columns(row_type)
+    label   = get_row_id_label(row_type)
     user = get_user()
-    user["tracker"][date].push({ "id": row_type, "columns": columns})
+    user["tracker"][date].append({ "id": row_type, "label": label, "columns": columns})
     update_user(user)
     return ""
 
@@ -98,9 +102,9 @@ def get_rows(date):
 # List Contents ############################################
 
 # This is just for /lists/carbon-sources
-@api.get('/lists/<list_id>')
-def get_list_defs(list_id):
-    return get_list_definition(list_id)
+@api.get('/lists/carbon-sources/rows/1')
+def get_list_defs():
+    return get_list_definition("carbon-sources")
 
 # Goals ####################################################
 

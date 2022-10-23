@@ -45,8 +45,6 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import PersonIcon from '@mui/icons-material/Person';
-import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import Box from '@mui/material/Box';
@@ -76,7 +74,7 @@ function SimpleDialog(props) {
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>Sources of Carbon Emissions</DialogTitle>
-        <CarbonTable path="/tracker/rows/" date={today()}/>
+        <CarbonTable path="/lists/carbon-sources" date="1" showAdd="true" />
         
     </Dialog>
   );

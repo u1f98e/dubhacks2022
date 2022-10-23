@@ -10,7 +10,7 @@ import TabsWrappedLabel from './panels';
 
 import CarbonTable from "./table"
 
-function Copyright() {
+function Footer() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
         Team NPM Install WSU - Dubhacks 2022
@@ -29,7 +29,7 @@ export default function App() {
         <ProTip />
         <Tabs />
         <TabsWrappedLabel />
-        <Copyright />
+        <Footer />
         {/* <CarbonTable /> */}
         </Box>
         </Container>

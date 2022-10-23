@@ -3,7 +3,7 @@
 Install dependencies:
 
 ```bash
-$ pip install flask python-dotenv cexprtk
+$ pip install flask flask-cors python-dotenv cexprtk
 $ npm install
 ```
 

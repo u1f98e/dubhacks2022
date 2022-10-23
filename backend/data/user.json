@@ -1,9 +1,20 @@
 {
-	"dates": {
-		"2022-01-01": [
-			{ "id": "commute-car", "columns": {
+	"initial": [
+		{ "id": "commute-car", "label": "Car Commute", "columns": {
+			"miles": { "label": "Miles", "type": "input", "value": "30"}
+		}}
+	],
+
+	"tracker": {
+		"2022/10/23": [
+			{ "id": "commute-bus", "label": "Bus Commute", "columns": {
 				"miles": { "label": "Miles", "type": "input", "value": "30"}
 			}}
 		]
+	},
+	"goals": {
+		"year":   0,
+		"month":  0,
+		"day":    0
 	}
 }

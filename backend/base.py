@@ -1,14 +1,26 @@
 from flask import Flask
 import lists
+import cexprtk
+import json
 
 api = Flask(__name__)
 
-@api.route('/test')
-def my_profile():
+user_file = open("data/user.json", "r")
+user = json.load(user_file)
+user_file.close()
+
+def update_user():
+    user_file = open("data/user.json", "w")
+    json.dumps(user, user_file, indent=4)
+    user_file.close()
+
+@api.route('/test/<text>')
+def my_profile(text):
     response_body = {
-        "name": "You",
+        "name": "YOU",
         "about" :"Hello! I'm a full stack developer that loves python and javascript"
     }
+    print(text)
 
     return response_body
 
@@ -16,31 +28,17 @@ def my_profile():
 
 @api.post('/initial/insert/<date>/<int:index>/<row_type>')
 def insert_row_initial(date, index, row_type):
-    response = {
-        
-    }
-    return response
+    user["initial"]
 
 @api.post('/initial/remove/<date>/<int:index>')
 def remove_row_initial(date, index):
-    response = {
-        
-    }
-    return response
 
 @api.post('/initial/update/<date>/<int:index>/<key>/<value>')
 def update_row_initial(date, index, key, value):
-    response = {
-        
-    }
-    return response
 
 @api.get('/initial/rows/<date>')
 def get_rows_initial(date):
-    response = {
-        
-    }
-    return response
+    
 
 # Tracker ###################################################
 

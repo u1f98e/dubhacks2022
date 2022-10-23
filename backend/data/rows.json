@@ -1,5 +1,6 @@
 {
 	"commute-car": { 
+		"label": "Car Commute",
 		"formula": "miles / mpg * 8.887",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" },
@@ -8,6 +9,7 @@
 	},
 	
 	"commute-diesel": { 
+		"label": "Truck(Diesel) Commute",
 		"formula": "miles / mpg * 10.180",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" },
@@ -16,6 +18,7 @@
 	},
 
 	"commute-bus": { 
+		"label": "Bus Commute",
 		"formula": "miles * 0.090718474",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" }
@@ -23,6 +26,7 @@
 	},
 
 	"commute-train": { 
+		"label": "Train Commute",
 		"formula": "miles * 0.177",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" }
@@ -30,6 +34,7 @@
 	},
 
 	"travel-plane": { 
+		"label": "Plane Travel",
 		"formula": "miles * 24.176473321",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" }
@@ -37,6 +42,7 @@
 	},
 
 	"travel-boat": { 
+		"label": "Boat Travel",
 		"formula": "miles * mpg",
 		"columns": {
 			"miles": { "label": "Miles", "type": "input" }
@@ -44,6 +50,7 @@
 	},
 
 	"diet-chicken": { 
+		"label": "Chicken Eaten",
 		"formula": "kg * 6",
 		"columns": {
 			"kg": { "label": "Kilograms", "type": "input" }
@@ -51,6 +58,7 @@
 	},
 
 	"diet-pork": { 
+		"label": "Pork Eaten",
 		"formula": "kg * 7",
 		"columns": {
 			"kg": { "label": "Kilograms", "type": "input" }
@@ -58,6 +66,7 @@
 	},
 
 	"diet-beef": { 
+		"label": "Beef Eaten",
 		"formula": "kg * 60",
 		"columns": {
 			"kg": { "label": "Kilograms", "type": "input" }
@@ -65,6 +74,7 @@
 	},
 
 	"energy-gas": { 
+		"label": "Natural Gas Used",
 		"formula": "kwh * 0.412769057",
 		"columns": {
 			"kwh": { "label": "KWh", "type": "input" }
@@ -72,6 +82,7 @@
 	},
 
 	"energy-coal": { 
+		"label": "Coal Used",
 		"formula": "kwh * 1.011510985",
 		"columns": {
 			"kwh": { "label": "KWh", "type": "input" }
@@ -79,6 +90,7 @@
 	},
 
 	"energy-petrol": { 
+		"label": "Petrolium Used",
 		"formula": "kwh * 0.966151748",
 		"columns": {
 			"kwh": { "label": "KWh", "type": "input" }

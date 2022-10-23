@@ -8,6 +8,7 @@ import ProTip from './ProTip';
 import TabsWrappedLabel from './panels';
 import CarbonTable from './table'
 import {today} from './config'
+import  SimpleContainer from './welcomeScreen'; 
 
 function Footer() {
   return (
@@ -23,10 +24,10 @@ export default function App() {
     <Container maxWidth="lg">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          FootprintMinder      
+        <h1>footprintMinder</h1>
         </Typography>
-       
         <TabsWrappedLabel />
+        <SimpleContainer />
         <Footer />
         <CarbonTable path="/tracker/rows/" date={today()} />
         </Box>

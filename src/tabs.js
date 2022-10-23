@@ -1,6 +1,6 @@
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
-export default function App() {
+export default function Tabs() {
   const navigate = useNavigate();
 
   const navigateToday = () => {
@@ -46,6 +46,21 @@ function Monthly() {
   return <h2>Current Monthly</h2>;
 }
 
-function Year() {
+function Yearly() {
   return <h2>Current Year</h2>;
 }
+
+
+function Today() {
+  return <h2>Today</h2>;
+}
+
+function Monthly() {
+  return <h2>Current Monthly</h2>;
+}
+
+function Yearly() {
+  return <h2>Current Year</h2>;
+}
+
+

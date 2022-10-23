@@ -55,15 +55,12 @@ return (
             <Route path="/2" element={<Box> {date}</Box> } />
           <Route path="/3" element={<Box> Month {current.getMonth()+1}</Box>} />
           <Route path="/4" element={<Box> Year {year}</Box>} />
+          <Route path="/5" element={<Box sx={{ my: 1 }}> 
+         
 
-
-
-          <Route path="/5" element={<Box> 
-          About Page. 
-
-          footprintMinder helps user see how much of an effect they have on the enviornment in the day to day tasks. They are able to get their current carbon footprint score and have a reachable goal they can work towards. 
-          Users can work towards a reachable carbon footprint goal by following recomendations that they app directs
-          them too if they score is too high. 
+          footprintMinder helps user see how much of an effect they have on the enviornment in day to day tasks. They are able to get their current carbon footprint score and have a reachable goal they can work towards. 
+          Users can work towards a reachable yearly carbon footprint goal by following recomendations suggested by the app
+          if their score for an individual day or week is too high. 
 
           </Box>} />
 

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-
+import TextField from '@mui/material/TextField';
 
 export default function ProTip() {
-  return <Button variant="outlined">Hello World</Button>;
+return (<TextField id="outlined-basic" label="Outlined" variant="outlined" /> );
 }

@@ -45,27 +45,27 @@ return (
 
       <Routes>
 
-             <Route path="/1" element={<Button> 
+             <Route path="/1" element={<Box> 
                 Assesments questions
                 1. 
                 2.
                 3. 
                 4. 
-             </Button>} />
-            <Route path="/2" element={<Button> {date}</Button> } />
-          <Route path="/3" element={<Button> Month {current.getMonth()+1}</Button>} />
-          <Route path="/4" element={<Button> Year {year}</Button>} />
+             </Box>} />
+            <Route path="/2" element={<Box> {date}</Box> } />
+          <Route path="/3" element={<Box> Month {current.getMonth()+1}</Box>} />
+          <Route path="/4" element={<Box> Year {year}</Box>} />
 
 
 
-          <Route path="/5" element={<Button> 
+          <Route path="/5" element={<Box> 
           About Page. 
 
           footprintMinder helps user see how much of an effect they have on the enviornment in the day to day tasks. They are able to get their current carbon footprint score and have a reachable goal they can work towards. 
           Users can work towards a reachable carbon footprint goal by following recomendations that they app directs
           them too if they score is too high. 
 
-          </Button>} />
+          </Box>} />
 
 
         </Routes>

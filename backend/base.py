@@ -18,7 +18,7 @@ def update_user():
 def my_profile(text):
     response_body = {
         "name": "YOU",
-        "about" :"Hello! I'm a full stack developer that loves python and javascript"
+        "your-text": f"You sent: '{text}'. :)"
     }
     print(text)
 
@@ -32,31 +32,29 @@ def insert_row_initial(date, index, row_type):
 
 @api.post('/initial/remove/<date>/<int:index>')
 def remove_row_initial(date, index):
+    return ""
 
 @api.post('/initial/update/<date>/<int:index>/<key>/<value>')
 def update_row_initial(date, index, key, value):
+    return ""
 
 @api.get('/initial/rows/<date>')
 def get_rows_initial(date):
-    
+    return ""
 
 # Tracker ###################################################
 
 @api.post('/tracker/insert/<date>/<int:index>/<row_type>')
 def insert_row(date, index, row_type):
+    return ""
 
 @api.post('/tracker/remove/<date>/<int:index>')
 def remove_row(index):
+    return ""
 
 @api.post('/tracker/update/<date>/<int:index>/<key>/<value>')
 def update_row(date, index, key, value):
-
-@api.get('/tracker/rows/<date>')
-def get_rows(date):
-    response = {
-        
-    }
-    return response
+    return ""
 
 @api.get('/tracker/rows/<date>')
 def get_rows(date):

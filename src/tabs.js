@@ -1,6 +1,6 @@
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import Button from '@mui/material/Button';
-
+import ButtonGroup from '@mui/material/ButtonGroup';
 export default function Tabs() {
   const navigate = useNavigate();
 
@@ -22,8 +22,13 @@ export default function Tabs() {
 
   return (
         <div>
-        <Button variant="contained" onClick={navigateToday}>Today</Button>
-        <Button variant="contained" onClick={navigateToday}>Today</Button>
+
+            <ButtonGroup variant="contained" aria-label="outlined primary button group">
+              <Button>Today</Button>
+              <Button>Monthly</Button>
+              <Button>Yearly</Button>
+            </ButtonGroup>
+  
         </div>
   );
   

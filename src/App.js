@@ -5,9 +5,8 @@ import Typography from '@mui/material/Typography';
 
 import Box from '@mui/material/Box';
 import ProTip from './ProTip';
-import Tabs from './tabs';
 import TabsWrappedLabel from './panels';
-import CarbonTable from "./table";
+
 
 function Footer() {
   return (

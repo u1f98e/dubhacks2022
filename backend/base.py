@@ -1,7 +1,7 @@
 from flask import Flask
-import lists
 import cexprtk
 import json
+import datetime
 
 from flask_cors import CORS
 api = Flask(__name__)
@@ -10,6 +10,18 @@ cors = CORS(api)
 user_file = open("data/user.json", "r")
 user = json.load(user_file)
 user_file.close()
+
+rows = open("data/rows.json", "r")
+
+def get_list_definition(list_id):
+    with open(f"data/{list_id}.json") as read_file:
+        return json.load(read_file)
+    
+def get_row_id_columns(row_id):
+    return rows[row_id]["columns"]
+
+def get_row_id_formula(row_id):
+    return rows[row_id]["formula"]
 
 def update_user():
     user_file = open("data/user.json", "w")
@@ -30,7 +42,7 @@ def my_profile(text):
 
 @api.post('/initial/insert/<row_type>')
 def push_row_initial(row_type):
-    columns = get_new_row_columns(row_type)
+    columns = get_row_id_columns(row_type)
     user["initial"].push({ id: row_type, columns: columns})
 
 @api.post('/initial/remove/<int:index>')
@@ -98,32 +110,41 @@ def set_goal_day(value):
 
 # Calculate Current
 
-def do_calculation():
-    return ""
+def in_current_time(string):
+    str_date = datetime.datetime.strptime(string, "%Y/%m/%d")
+    current_date = datetime.now()
+    year = str_date.year == current_date.year
+    month = str_date.month == current_date.month,
+    day = str_date.day == current_date.day
+    return {"year": year,
+            "month": month and year,
+            "day": day and month and year}
+
+def do_calculation(timeframe):
+    result = 0
+    for date, rows in user["tracker"]:
+        if in_current_time(date)[timeframe]:
+            for row in rows:
+                row_id = row["id"]
+                variables = {key: val["value"] for key, val in row["columns"]}
+                result += cexprtk.evaluate_expression(
+                    get_row_id_formula(row_id),
+                    variables
+                )
+
+    return result
 
 @api.get('/user/current/year')
 def get_current_yearly():
-    return user["goals"]["year"]["current"]
-
-@api.post('/user/current/year/<value>')
-def set_current_yearly(value):
-    user["goals"]["year"]["current"] = value
+    return do_calculation("year")
     
 @api.get('/user/current/month')
 def get_current_month():
-    return user["goals"]["month"]["current"]
-
-@api.post('/user/current/month/<value>')
-def set_current_month(value):
-    user["goals"]["month"]["current"] = value
+    return do_calculation("month")
 
 @api.get('/user/current/day')
 def get_current_day():
-    return user["goals"]["day"]["current"]
-
-@api.post('/user/current/day/<value>')
-def set_current_day(value):
-    user["goals"]["day"]["current"] = value
+    return do_calculation("day")
 
 # Calculations ##################################
 

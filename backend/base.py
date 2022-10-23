@@ -3,6 +3,10 @@ import lists
 import cexprtk
 import json
 
+from flask_cors import CORS
+app = Flask(__name__)
+cors = CORS(app)
+
 api = Flask(__name__)
 
 user_file = open("data/user.json", "r")

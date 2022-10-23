@@ -30,7 +30,7 @@ export default function App() {
         <Tabs />
         <TabsWrappedLabel />
         <Copyright />
-        {/* <CarbonTable /> */}
+        <CarbonTable />
         </Box>
         </Container>
   );

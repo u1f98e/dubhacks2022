@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from "axios";
 import TextField from '@mui/material/TextField';
-import url from "./config"
+// import {url, today} from "./config"
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,6 +10,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
+const url = "http://localhost:5000"
+
+function today() { return (new Date).toISOString().slice(0,10) }
+function this_month_year() { return (new Date).toISOString().slice(0,7) }
+function this_year() { return (new Date).toISOString().slice(0,4) }
 
 // function createData(name, calories, fat, carbs, protein) {
 //   return { name, calories, fat, carbs, protein };
@@ -58,39 +64,49 @@ import Paper from '@mui/material/Paper';
 // }
 
 export default function CarbonTable() {
-	const [selectedDate, setSelectedDate] = React.useState(Date())
-	const [rows, setRows] = React.useState({})
-	
-    axios({
-      method: "GET",
-      url: url + "/tracker/rows/" + selectedDate
-    })
-    .then((response) => {
-      setRows(response.data)
-    }).catch((error) => {
-      if (error.response) {
-        console.log(error.response)
-        console.log(error.response.status)
-        console.log(error.response.headers)
-        }
-    })
+	const [loaded, setLoaded] = React.useState(false)
+	const [request, setRequest] = React.useState(false)
+	const [response, setResponse] = React.useState({})
 
+	const [selectedDate, setSelectedDate] = React.useState(today())
+	
+	if(!request) {
+		axios({
+		  method: "GET",
+		  url: url + "/tracker/rows/" + selectedDate
+		})
+		.then((resp) => {
+			setResponse(resp.data)
+			setLoaded(true)
+		}).catch((error) => {
+		  if (error.response) {
+				console.log(error.response)
+				console.log(error.response.status)
+				console.log(error.response.headers)
+			}
+		})
+		
+		setRequest(true)
+	}
+	
 	return (
 		<TableContainer component={Paper}>
-			<TableBody>
-				{this.rows.map(( row, rindex ) => (
-					<TableRow>
-						<TableCell>
-							<p>{row.label}</p>
-						</TableCell>
-						{row.columns.map(( col, cindex ) => (
-							<TableCell align="right">
-								<TextField id={cindex} label={col.label} variant="outlined" value={col.value} />
+			<Table>
+				<TableBody>
+					{loaded && response.rows.map(( row, rindex ) => (
+						<TableRow key={rindex}>
+							<TableCell key={row.label + "Cell"}>
+								<p>{row.label}</p>
 							</TableCell>
-						))}
-					</TableRow>
-				))}
-			</TableBody>
+							{Object.keys(row.columns).map(( col, _cindex ) => (
+								<TableCell key={col + "Cell"} align="right">
+									<TextField key={col} label={row.columns[col].label} variant="outlined" value={row.columns[col].value} />
+								</TableCell>
+							))}
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
 		</TableContainer>
 	);
 }

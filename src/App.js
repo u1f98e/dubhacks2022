@@ -8,6 +8,8 @@ import ProTip from './ProTip';
 import Tabs from './tabs';
 import TabsWrappedLabel from './panels';
 
+import CarbonTable from "./table"
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -22,12 +24,13 @@ export default function App() {
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          footprintMinder      
+          FootprintMinder      
         </Typography>
         <ProTip />
         <Tabs />
         <TabsWrappedLabel />
         <Copyright />
+        {/* <CarbonTable /> */}
         </Box>
         </Container>
   );

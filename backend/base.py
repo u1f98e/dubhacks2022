@@ -1,4 +1,5 @@
 from flask import Flask
+import lists
 
 api = Flask(__name__)
 
@@ -11,37 +12,71 @@ def my_profile():
 
     return response_body
 
-# Lists ###################################################
+# Initial Footprint ###################################################
 
-@api.post('/user/insert/<list_id>/<int:index>/<row_type>')
-def insert_row(list_id, index, row_type):
+@api.post('/initial/insert/<date>/<int:index>/<row_type>')
+def insert_row_initial(date, index, row_type):
     response = {
-
+        
     }
     return response
 
-@api.post('/user/remove/<list_id>/<int:index>')
+@api.post('/initial/remove/<date>/<int:index>')
+def remove_row_initial(date, index):
+    response = {
+        
+    }
+    return response
+
+@api.post('/initial/update/<date>/<int:index>/<key>/<value>')
+def update_row_initial(date, index, key, value):
+    response = {
+        
+    }
+    return response
+
+@api.get('/initial/rows/<date>')
+def get_rows_initial(date):
+    response = {
+        
+    }
+    return response
+
+# Tracker ###################################################
+
+@api.post('/tracker/insert/<date>/<int:index>/<row_type>')
+def insert_row(date, index, row_type):
+    response = {
+        
+    }
+    return response
+
+@api.post('/tracker/remove/<date>/<int:index>')
 def remove_row(index):
     response = {
         
     }
     return response
 
-@api.post('/user/update/<list_id>/<int:index>/<key>/<value>')
-def update_row():
+@api.post('/tracker/update/<date>/<int:index>/<key>/<value>')
+def update_row(date, index, key, value):
     response = {
         
     }
     return response
 
-@api.get('/user/rows/<list_id>')
-def get_rows():
+@api.get('/tracker/rows/<date>')
+def get_rows(date):
     response = {
         
     }
     return response
 
 # List Contents ############################################
+
+@api.get('/lists/<list_id>')
+def get_list_defs(list_id):
+    return lists.get_list_definition(list_id)
 
 # Goals ####################################################
 
